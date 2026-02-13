@@ -4,8 +4,8 @@ const questions = [
     "Sachme??",
     "Dobara sochla!",
     "akhri mukha de raha hoon!",
-    "pach tae gi?",
-    "abhi bhi time hai!",
+    "abee man ja ra",
+    "abhi bhi time hai!"
 ];
 
 const yesBtn = document.getElementById('yesBtn');
