@@ -2,114 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Be My Valentine?</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --soft-bg: #fff0f3;
+            --text-color: #590d22;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* Removes blue flash on mobile tap */
+        }
+
         body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, #ffffff 0%, var(--soft-bg) 100%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Prevents accidental scrolling on mobile */
+        }
+
+        #container {
+            width: 90%;
+            max-width: 400px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
+            border: 2px solid white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffeef2;
-            font-family: 'Arial', sans-serif;
             text-align: center;
         }
 
+        lottie-player {
+            width: 100% !important;
+            max-width: 280px;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+
         #question {
-            font-size: 2rem;
-            color: #d63384;
-            margin-bottom: 20px;
-            font-weight: bold;
+            font-size: 1.8rem; /* Scaled for mobile */
+            color: var(--text-color);
+            font-weight: 800;
+            margin: 20px 0;
+            line-height: 1.2;
         }
 
         .buttons {
             display: flex;
-            gap: 20px;
+            width: 100%;
+            gap: 15px;
+            justify-content: center;
             align-items: center;
+            flex-wrap: wrap; /* Allows buttons to stack if Yes gets too big */
         }
 
         button {
             padding: 15px 25px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            touch-action: manipulation; /* Optimizes for mobile touch */
         }
 
         #yesBtn {
-            background-color: #ff4d6d;
+            background-color: var(--primary-pink);
             color: white;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
         }
 
         #noBtn {
-            background-color: #adb5bd;
-            color: white;
-        }
-
-        img {
-            width: 200px;
-            margin-bottom: 20px;
+            background-color: #ffccd5;
+            color: var(--primary-pink);
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
     <div id="container">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwaW94am84N3B2amZ4ZWZ4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v6aO3MZfVnEn7p_9/giphy.gif" alt="Cute Cat">
+        <lottie-player 
+            id="mainAnim"
+            src="Bouncing Heart.json" 
+            background="transparent" 
+            speed="1" 
+            loop 
+            autoplay>
+        </lottie-player>
+
         <div id="question">Will you be my Valentine?</div>
-        <div class="buttons">
+
+        <div class="buttons" id="btnGroup">
             <button id="yesBtn" onclick="celebrate()">Yes</button>
             <button id="noBtn" onclick="handleNo()">No</button>
         </div>
     </div>
 
-    <script>
-        let clickCount = 0;
-        const questions = [
-            "Are you sure?",
-            "Really sure??",
-            "Think about it again!",
-            "Last chance!",
-            "Surely not?",
-            "You're breaking my heart ;("
-        ];
-
-        function handleNo() {
-            const yesBtn = document.getElementById('yesBtn');
-            const noBtn = document.getElementById('noBtn');
-            const questionText = document.getElementById('question');
-
-            // Change question text
-            if (clickCount < questions.length) {
-                questionText.innerText = questions[clickCount];
-            } else {
-                questionText.innerText = "Please? ❤️";
-            }
-
-            // Make Yes bigger
-            let currentYesSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-            yesBtn.style.fontSize = (currentYesSize * 1.5) + 'px';
-            yesBtn.style.padding = (parseFloat(window.getComputedStyle(yesBtn).padding) * 1.3) + 'px';
-
-            // Make No smaller
-            let currentNoSize = parseFloat(window.getComputedStyle(noBtn).fontSize);
-            if (currentNoSize > 5) {
-                noBtn.style.fontSize = (currentNoSize * 0.8) + 'px';
-                noBtn.style.padding = (parseFloat(window.getComputedStyle(noBtn).padding) * 0.8) + 'px';
-            }
-
-            clickCount++;
-        }
-
-        function celebrate() {
-            document.body.innerHTML = `
-                <div style="font-size: 3rem; color: #ff4d6d;">Yay! See you on the 14th! ❤️</div>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwaW94am84N3B2amZ4ZWZ4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/c7maYdg99KjNf3iEcf/giphy.gif" style="width:300px; margin-top:20px;">
-            `;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
