@@ -1,11 +1,11 @@
 let clickCount = 0;
 const questions = [
-    "Are you sure?",
-    "Really sure??",
-    "Think again! 🥺",
-    "Last chance!",
-    "Surely not?",
-    "You're breaking my heart ;("
+    "Abee kyu?",
+    "Sachme??",
+    "Dobara sochla!",
+    "akhri mukha de raha hoon!",
+    "pach tae gi?",
+    "abhi bhi time hai!",
 ];
 
 const yesBtn = document.getElementById('yesBtn');
@@ -18,7 +18,7 @@ function handleNo() {
     if (clickCount < questions.length) {
         questionText.innerText = questions[clickCount];
     } else {
-        questionText.innerText = "Please? ❤️";
+        questionText.innerText = "Please? ";
     }
 
     // 2. Make Yes Button Bigger (Mobile-friendly increment)
