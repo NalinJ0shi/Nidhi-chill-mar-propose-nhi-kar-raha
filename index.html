@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day - Love in the Air</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Happy Valentine's Day</h1>
+            <p class="hero-subtitle">Celebrate Love, Connection, and Romance</p>
+            <button class="cta-button" onclick="scrollToSection('about')">Learn More</button>
+        </div>
+        <div class="hearts-animation">
+            <div class="heart">❤️</div>
+            <div class="heart">💕</div>
+            <div class="heart">❤️</div>
+            <div class="heart">💕</div>
+            <div class="heart">❤️</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Valentine's Day</h2>
+            <p>Valentine's Day is celebrated on February 14th every year. It's a day dedicated to love and affection, where people express their feelings to those they care about most. From romantic gestures to heartfelt messages, this day reminds us to cherish our loved ones.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="card-icon">💌</span>
+                    <h3>Send Love Letters</h3>
+                    <p>Express your feelings through heartfelt messages and cards.</p>
+                </div>
+                <div class="about-card">
+                    <span class="card-icon">🌹</span>
+                    <h3>Give Flowers</h3>
+                    <p>Roses and flowers symbolize love and appreciation.</p>
+                </div>
+                <div class="about-card">
+                    <span class="card-icon">🍫</span>
+                    <h3>Share Gifts</h3>
+                    <p>Chocolates, gifts, and surprises make the day special.</p>
+                </div>
+                <div class="about-card">
+                    <span class="card-icon">🕯️</span>
+                    <h3>Create Moments</h3>
+                    <p>Spend quality time and create unforgettable memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Valentine's Inspiration</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image">🌹</div>
+                <p>Red Roses</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image">💑</div>
+                <p>Together</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image">💍</div>
+                <p>Engagement</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image">🎁</div>
+                <p>Gifts</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image">🍾</div>
+                <p>Celebration</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image">🌙</div>
+                <p>Romantic Night</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown">
+        <h2>Days Until Valentine's Day</h2>
+        <div class="countdown-timer">
+            <div class="countdown-item">
+                <span id="days" class="countdown-number">0</span>
+                <p>Days</p>
+            </div>
+            <div class="countdown-item">
+                <span id="hours" class="countdown-number">0</span>
+                <p>Hours</p>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes" class="countdown-number">0</span>
+                <p>Minutes</p>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds" class="countdown-number">0</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Generator Section -->
+    <section class="message-generator">
+        <h2>Generate a Love Message</h2>
+        <div class="message-container">
+            <button class="generate-btn" onclick="generateMessage()">Click for a Message 💌</button>
+            <div id="messageBox" class="message-box" style="display: none;">
+                <p id="generatedMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">Send Love 💕</button>
+        </form>
+        <p class="form-message" id="formMessage"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Valentine's Day Website. Made with ❤️ for Love.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
