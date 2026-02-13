@@ -40,9 +40,14 @@ function handleNo() {
 }
 
 function celebrate() {
-    // Swap to your final celebratory animation
+    // 1. Swap the source to your happy animation
     mainAnim.load("Love.json");
-    
-    questionText.innerText = "Yay! See you on the 14th! ❤️";
+
+    // 2. Disable looping so it plays only once
+    mainAnim.removeAttribute('loop'); 
+    mainAnim.setAttribute('autoplay', 'true');
+
+    // 3. Update the UI
+    questionText.innerText = "Badiya!";
     document.getElementById('btnGroup').style.display = "none";
 }
