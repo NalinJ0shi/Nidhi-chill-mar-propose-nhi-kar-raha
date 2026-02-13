@@ -47,7 +47,7 @@ function celebrate() {
     mainAnim.removeAttribute('loop'); 
     mainAnim.setAttribute('autoplay', 'true');
 
-    // 3. Update the UI
+    // 3. Update the UIj
     questionText.innerText = "Badiya!";
     document.getElementById('btnGroup').style.display = "none";
 }
